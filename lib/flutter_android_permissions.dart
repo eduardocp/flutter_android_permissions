@@ -40,18 +40,17 @@ class FlutterAndroidPermissions {
     List<Permissions> permissionStatusList = [];
     var result = status[0];
 
-      switch (result) {
-        case -1:
-          return Permissions(permissionName, PermissionStatus.noAgain);
-        case 0:
-          return Permissions(permissionName, PermissionStatus.deny);
-        case 1:
-          return Permissions(permissionName, PermissionStatus.allow);
-        default:
-          return Permissions(permissionName, PermissionStatus.deny);
-      }
-
+    switch (result) {
+      case -1:
+        return Permissions(permissionName, PermissionStatus.noAgain);
+      case 0:
+        return Permissions(permissionName, PermissionStatus.deny);
+      case 1:
+        return Permissions(permissionName, PermissionStatus.allow);
+      default:
+        return Permissions(permissionName, PermissionStatus.deny);
     }
+  }
 
   static Future<List<Permissions>> requestPermissions(List<PermissionName> permissionNameList) async {
     List<String> list = [];
@@ -78,7 +77,7 @@ class FlutterAndroidPermissions {
       }
       permissionStatusList.add(Permissions(permissionNameList[i], permissionStatus));
     }
-    return permi  ssionStatusList;
+    return permissionStatusList;
   }
 
   static Future<PermissionStatus> requestSinglePermission(PermissionName permissionName) async {

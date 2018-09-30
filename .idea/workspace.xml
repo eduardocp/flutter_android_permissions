@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0f1fdf34-9761-46b3-9ed0-4fb8eeb861b7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/br/com/ecp/flutterandroidpermissions/FlutterAndroidPermissionsPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/br/com/ecp/flutterandroidpermissions/FlutterAndroidPermissionsPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/flutter_android_permissions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_android_permissions.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="flutter_android_permissions.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/flutter_android_permissions.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+            <state relative-caret-position="466">
+              <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
                 <element signature="e#2700#6020#0" />
@@ -225,6 +223,14 @@
       <option name="presentableId" value="Default" />
       <updated>1538019643627</updated>
     </task>
+    <task id="LOCAL-00001" summary="add getSinglePermissionStatus">
+      <created>1538324685206</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1538324685206</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -265,6 +271,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add getSinglePermissionStatus" />
+    <option name="LAST_COMMIT_MESSAGE" value="add getSinglePermissionStatus" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -482,8 +492,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/flutter_android_permissions.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        <state relative-caret-position="466">
+          <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
             <element signature="e#2700#6020#0" />
