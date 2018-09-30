@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
 
   getPermissionStatus() async {
     get = '';
-    List<Permissions> permissions = await FlutterAndroidPermissions.getPermissionStatus([PermissionName.READ_PHONE_STATE]);
+    List<Permission> permissions = await FlutterAndroidPermissions.getPermissionStatus([PermissionName.READ_PHONE_STATE]);
     permissions.forEach((permission) {
       get += '${permission.permissionName}: ${permission.permissionStatus}\n';
     });
