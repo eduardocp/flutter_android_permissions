@@ -33,6 +33,26 @@ class FlutterAndroidPermissions {
     return permissionStatusList;
   }
 
+  static Future<Permissions> getSinglePermissionStatus(PermissionName permissionName) async {
+    List<String> list = [];
+    list.add(_getPermissionName(permissionName));
+    var status = await _channel.invokeMethod("getPermissionStatus", {"permissions": list});
+    List<Permissions> permissionStatusList = [];
+    var result = status[0];
+
+      switch (result) {
+        case -1:
+          return Permissions(permissionName, PermissionStatus.noAgain);
+        case 0:
+          return Permissions(permissionName, PermissionStatus.deny);
+        case 1:
+          return Permissions(permissionName, PermissionStatus.allow);
+        default:
+          return Permissions(permissionName, PermissionStatus.deny);
+      }
+
+    }
+
   static Future<List<Permissions>> requestPermissions(List<PermissionName> permissionNameList) async {
     List<String> list = [];
     permissionNameList.forEach((p) {
@@ -58,7 +78,7 @@ class FlutterAndroidPermissions {
       }
       permissionStatusList.add(Permissions(permissionNameList[i], permissionStatus));
     }
-    return permissionStatusList;
+    return permi  ssionStatusList;
   }
 
   static Future<PermissionStatus> requestSinglePermission(PermissionName permissionName) async {
