@@ -175,7 +175,9 @@ public class FlutterAndroidPermissionsPlugin implements MethodCallHandler, Plugi
 
     public static void registerWith(Registrar registrar) {
         final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutter_android_permissions");
-        channel.setMethodCallHandler(new FlutterAndroidPermissionsPlugin(registrar));
+        FlutterAndroidPermissionsPlugin plugin = new FlutterAndroidPermissionsPlugin(registrar);
+        channel.setMethodCallHandler(plugin);
+        registrar.addRequestPermissionsResultListener(plugin);
     }
 
     @Override
@@ -217,6 +219,7 @@ public class FlutterAndroidPermissionsPlugin implements MethodCallHandler, Plugi
                 }
             }
             result.success(intList);
+            return true;
         }
         return true;
     }
@@ -226,7 +229,7 @@ public class FlutterAndroidPermissionsPlugin implements MethodCallHandler, Plugi
         Activity activity = registrar.activity();
         for (String permission : permissions) {
             permission = "android.permission." + permission;
-            if (ContextCompat.checkSelfPermission(registrar.activity(), permission) == PackageManager.PERMISSION_DENIED) {
+            if (ContextCompat.checkSelfPermission(activity, permission) == PackageManager.PERMISSION_DENIED) {
                 if (!ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
                     intList.add(-1);
                 } else {

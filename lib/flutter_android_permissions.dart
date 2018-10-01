@@ -34,12 +34,11 @@ class FlutterAndroidPermissions {
   }
 
   static Future<Permission> getSinglePermissionStatus(PermissionName permissionName) async {
-    List<String> list = [];
-    list.add(_getPermissionName(permissionName));
-    var status = await _channel.invokeMethod("getPermissionStatus", {"permissions": list});
-    var result = status[0];
+    var status = await _channel.invokeMethod("getPermissionStatus", {
+      "permissions": [_getPermissionName(permissionName)]
+    });
 
-    switch (result) {
+    switch (status[0]) {
       case -1:
         return Permission(permissionName, PermissionStatus.noAgain);
       case 0:
